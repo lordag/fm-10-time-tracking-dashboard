@@ -2,7 +2,7 @@ let filter_buttons = document.querySelectorAll('.change_filter');
 
 const fetchData = (filter, label) => {
     console.log(label)
-    fetch('/data.json').then((response) => {
+    fetch('./data.json').then((response) => {
         if(!response.ok){
             console.log('Something went wrong!')
         }
