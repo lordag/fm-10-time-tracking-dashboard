@@ -28,7 +28,7 @@ Users should be able to:
 ![](./mobile-screenshot.png)
 
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
+- Solution URL: [Solution URL](https://lordag.github.io/fm-10-time-tracking-dashboard/)
 
 ## My process
 
