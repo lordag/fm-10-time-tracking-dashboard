@@ -1,0 +1,14 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "Frontend Mentor project 10",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lorenzo D'Agostini",
+  "license": "ISC",
+  "dependencies": {
+    "simple-hot-reload-server": "^1.2.0"
+  }
+}

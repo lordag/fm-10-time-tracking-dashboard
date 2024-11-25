@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  
+  <script src="./main.js" defer></script>
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+</head>
+<body>
+
+  <main>
+
+    <section class="user__box">
+      <header>
+        <img src="./images/image-jeremy.png" alt="Jeremy image" />
+        <div>
+          <span>Report for</span>
+          <h1>Jeremy Robson</h1>
+        </div>
+      </header>
+      <ul>
+        <li class="change_filter active" data-value="daily" data-label="Day">Daily</li>
+        <li class="change_filter" data-value="weekly" data-label="Week">Weekly</li>
+        <li class="change_filter" data-value="monthly" data-label="Month">Monthly</li>
+      </ul>
+    </section>
+
+    <section class="box" id="work">
+        <div class="box__content">
+          <header>
+            <h2>Work</h2>
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </header>
+          <p>
+            <strong class="current"></strong> <span class="previous"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="box" id="play">
+        <div class="box__content">
+          <header>
+            <h2>Play</h2>
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </header>
+          <p>
+            <strong class="current"></strong> <span class="previous"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="box" id="study">
+        <div class="box__content">
+          <header>
+            <h2>Study</h2>
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </header>
+          <p>
+            <strong class="current"></strong> <span class="previous"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="box" id="exercise">
+        <div class="box__content">
+          <header>
+            <h2>Exercise</h2>
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </header>
+          <p>
+            <strong class="current"></strong> <span class="previous"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="box" id="social">
+        <div class="box__content">
+          <header>
+            <h2>Social</h2>
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </header>
+          <p>
+            <strong class="current"></strong> <span class="previous"></span>
+          </p>
+        </div>
+      </section>
+
+      <section class="box" id="self__care">
+        <div class="box__content">
+          <header>
+            <h2>Self care</h2>
+            <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </header>
+          <p>
+            <strong class="current"></strong> <span class="previous"></span>
+          </p>
+        </div>
+      </section>
+
+  </main>
+  
+</body>
+</html>

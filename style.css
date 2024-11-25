@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    /* Primary */
+    --blue: hsl(246, 80%, 60%);
+    --light-red-work: hsl(15, 100%, 70%);
+    --soft-blue-play: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green-exercise: hsl(145, 58%, 55%);
+    --violet-social: hsl(264, 64%, 52%);
+    --soft-orange-self-care: hsl(43, 84%, 65%);
+
+    /* Neutral */
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body{
+    font-size: 1.125rem; /* 18px */
+    font-family: "Rubik", sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    margin: 0rem;
+    padding: 0rem;
+    background-color: var(--very-dark-blue);   
+    padding: 5rem 2rem;     
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.user__box{
+    background-color: var(--dark-blue);
+    border-radius: 1rem;
+}
+
+.user__box header{
+    background-color: var(--blue);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.user__box header img{
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+}
+
+.user__box header div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.user__box header div h1{
+    padding: 0rem;
+    margin: 0rem;
+    font-weight: 300;
+}
+
+.user__box header div span{
+    color:var(--pale-blue);
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+
+.user__box ul{
+    margin: 0rem;
+    padding: 1.5rem 2rem;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user__box ul li{
+    color: var(--desaturated-blue);
+    cursor: pointer;
+    transition: color 1s;
+}
+
+.user__box ul li:is(:hover, :focus, :active){
+    color: var(--white);    
+}
+
+.user__box ul li.active{
+    color: var(--white);
+}
+
+section.box{
+    height: 11.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-repeat: no-repeat;
+    background-position: right 1rem top -0.9rem;
+    background-size: 6rem;
+    border-radius: 1.5rem;
+}
+
+#work{
+    background-color: var(--light-red-work);
+    background-image: url('./images/icon-work.svg');
+}
+
+#play{
+    background-color: var(--soft-blue-play);
+    background-image: url('./images/icon-play.svg');
+}
+
+#study{
+    background-color: var(--light-red-study);
+    background-image: url('./images/icon-study.svg');
+    background-position: right 1rem top -0.6rem;
+}
+
+#exercise{
+    background-color: var(--lime-green-exercise);
+    background-image: url('./images/icon-exercise.svg');
+    background-position: right 1rem top -0.1rem;
+}
+
+#social{
+    background-color: var(--violet-social);
+    background-image: url('./images/icon-social.svg');
+    background-position: right 1rem top -1.5rem;
+}
+
+#self__care{
+    background-color: var(--soft-orange-self-care);
+    background-image: url('./images/icon-self-care.svg');
+    background-position: right 1rem top -1.6rem;
+}
+
+.box__content{
+    background-color: var(--dark-blue);
+    padding: 1.5rem 1.5rem;
+    border-radius: 1.5rem;
+    height: 8.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    transition: opacity 2s;
+}
+
+.box__content:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.box__content header,
+section.box div p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box__content p{
+    margin: 0rem
+}
+
+.box__content header h2{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0rem;
+}
+
+.box__content p strong{
+    font-weight: 300;
+    font-size: 2.2rem;
+}
+
+.box__content p span{
+    font-size: 1rem;
+    font-weight: 300;
+    color:var(--pale-blue);
+}
+
+.dots {
+    display: flex; 
+    gap: 0.2rem; 
+    justify-content: end;
+    align-items: center;
+  }
+  
+.dots span {
+    width: 0.3rem; 
+    height: 0.3rem; 
+    background-color: var(--desaturated-blue);
+    border-radius: 50%;
+    transition: background-color 0.6s;
+}
+
+.dots:hover span{
+    background-color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem;
+        margin: 0rem;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        "user work play study"
+        "user exercise social self-care"; 
+        max-width: calc(100% - 3rem);
+    }
+
+    section.box{
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .user__box{
+        grid-area: user;
+        grid-row: span 2;
+        margin-bottom: 0rem;           
+        width: 100%;
+        height: 100%;     
+    }
+
+    .user__box header{
+        background-color: var(--blue);
+        display: flex;        
+        flex-direction: column;
+        justify-content: start;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        border-radius: 1rem;
+    }
+    
+    .user__box header img{
+        width: 4rem;
+        height: 4rem;
+        border: 2px solid var(--white);
+        border-radius: 50%;
+        align-self: flex-start;
+    }
+
+    .user__box ul{
+        margin: 0rem;
+        padding: 1.5rem 2rem;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .user__box ul li {
+        font-size: 0.9rem;
+        line-height: 1.8rem;
+    }
+
+    .box__content{        
+        width: 100%;
+        height: calc(100% - 2.7rem);
+        margin-top: 2.7rem;
+    }
+
+    .box__content header h2 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin: 0rem;
+    }
+
+    #work{
+        grid-area: work;
+    }
+
+    #play{
+        grid-area: play;
+    }
+
+    #study{
+        grid-area: study;
+    }
+
+    #exercise{
+        grid-area: exercise;
+    }
+
+    #social{
+        grid-area: social;
+    }
+
+    #self__care{
+        grid-area: self-care;
+    }
+
+    section.box div p{
+        display: flex;
+        flex-direction: column;
+        justify-content: unset;
+        align-items: flex-start;
+    }
+
+    .user__box header div span {
+        font-size: 0.8rem;
+    }
+
+    .user__box header div h1 {
+        font-size: 1.3rem;
+    }
+
+    .dots span {
+        width: 0.25rem; 
+        height: 0.25rem; 
+    }
+
+
+    section.box div p {
+        gap: 0.3rem;
+    }
+
+    .box__content p span {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 997px) {
+
+    main{
+        grid-template-columns: repeat(4, 210px);
+    }
+
+    .user__box header div{
+        padding:  1.5rem 0rem 4rem 0rem;
+    }
+
+    .user__box header div h1 {
+        font-size: 2rem;
+    }
+
+    .dots span {
+        width: 0.3rem; 
+        height: 0.3rem; 
+    }
+
+    .box__content header h2 {
+        font-size: 1rem;
+    }
+
+    .box__content p strong {
+        font-size: 3.5rem;
+    }
+
+    .box__content p span {
+        font-size: 0.9rem;
+    }
+
+    .user__box ul li {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    
+    main{
+        grid-template-columns: repeat(4, 250px);
+    }
+
+    .user__box header div h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    main{
+        grid-template-columns: repeat(4, 280px);
+    }
+    
+    .box__content p strong {
+        font-size: 4.5rem;
+    }
+
+    .user__box ul li {
+        font-size: 1rem;
+        line-height: 2.2rem;
+    }
+
+}
