@@ -39,12 +39,12 @@ main{
     gap: 1.5rem;
 }
 
-.user__box{
+.userbox{
     background-color: var(--dark-blue);
     border-radius: 1rem;
 }
 
-.user__box header{
+.userbox__header{
     background-color: var(--blue);
     display: flex;
     justify-content: start;
@@ -54,32 +54,32 @@ main{
     border-radius: 1rem;
 }
 
-.user__box header img{
+.userbox__image{
     width: 4rem;
     height: 4rem;
     border: 2px solid var(--white);
     border-radius: 50%;
 }
 
-.user__box header div{
+.userbox__info{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.user__box header div h1{
+.userbox__info__name{
     padding: 0rem;
     margin: 0rem;
     font-weight: 300;
 }
 
-.user__box header div span{
+.userbox__info__text{
     color:var(--pale-blue);
     font-size: 0.9rem;
     line-height: 1.5rem;
 }
 
-.user__box ul{
+.userbox__list{
     margin: 0rem;
     padding: 1.5rem 2rem;
     list-style-type: none;
@@ -87,22 +87,22 @@ main{
     justify-content: space-between;
 }
 
-.user__box ul li{
+.userbox__list__item{
     color: var(--desaturated-blue);
     cursor: pointer;
     transition: color 1s;
 }
 
-.user__box ul li:is(:hover, :focus, :active){
+.userbox__list__item:is(:hover, :focus, :active){
     color: var(--white);    
 }
 
-.user__box ul li.active{
+.userbox__list--active{
     color: var(--white);
 }
 
-section.box{
-    height: 11.5rem;
+.activity{
+    height: 11rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -112,45 +112,45 @@ section.box{
     border-radius: 1.5rem;
 }
 
-#work{
+.activity__work{
     background-color: var(--light-red-work);
     background-image: url('./images/icon-work.svg');
 }
 
-#play{
+.activity__play{
     background-color: var(--soft-blue-play);
     background-image: url('./images/icon-play.svg');
 }
 
-#study{
+.activity__study{
     background-color: var(--light-red-study);
     background-image: url('./images/icon-study.svg');
     background-position: right 1rem top -0.6rem;
 }
 
-#exercise{
+.activity__exercise{
     background-color: var(--lime-green-exercise);
     background-image: url('./images/icon-exercise.svg');
     background-position: right 1rem top -0.1rem;
 }
 
-#social{
+.activity__social{
     background-color: var(--violet-social);
     background-image: url('./images/icon-social.svg');
     background-position: right 1rem top -1.5rem;
 }
 
-#self__care{
+.activity__self-care{
     background-color: var(--soft-orange-self-care);
     background-image: url('./images/icon-self-care.svg');
     background-position: right 1rem top -1.6rem;
 }
 
-.box__content{
+.activity__container{
     background-color: var(--dark-blue);
     padding: 1.5rem 1.5rem;
     border-radius: 1.5rem;
-    height: 8.9rem;
+    /* height: 8.9rem; */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -158,47 +158,47 @@ section.box{
     transition: opacity 2s;
 }
 
-.box__content:hover{
+.activity__container:hover{
     cursor: pointer;
     opacity: 0.9;
 }
 
-.box__content header,
-section.box div p{
+.activity__container__hrs,
+.activity__container__header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.box__content p{
+.activity__container__hrs{
     margin: 0rem
 }
 
-.box__content header h2{
+.activity__container__header__title{
     font-size: 1.1rem;
     font-weight: 500;
     margin: 0rem;
 }
 
-.box__content p strong{
+.activity__container__hrs__current{
     font-weight: 300;
     font-size: 2.2rem;
 }
 
-.box__content p span{
+.activity__container__hrs__previous{
     font-size: 1rem;
     font-weight: 300;
     color:var(--pale-blue);
 }
 
-.dots {
+.activity__container__header__dots {
     display: flex; 
     gap: 0.2rem; 
     justify-content: end;
     align-items: center;
   }
   
-.dots span {
+.activity__container__header__dots span {
     width: 0.3rem; 
     height: 0.3rem; 
     background-color: var(--desaturated-blue);
@@ -206,10 +206,11 @@ section.box div p{
     transition: background-color 0.6s;
 }
 
-.dots:hover span{
+.activity__container__header__dots:hover span{
     background-color: var(--white);
 }
 
+/* 768 px */
 @media screen and (min-width: 48rem) {
     body{
         display: flex;
@@ -229,13 +230,7 @@ section.box div p{
         max-width: calc(100% - 3rem);
     }
 
-    section.box{
-        aspect-ratio: 1 / 1;
-        width: 100%;
-        height: 100%;
-    }
-
-    .user__box{
+    .userbox{
         grid-area: user;
         grid-row: span 2;
         margin-bottom: 0rem;           
@@ -243,7 +238,7 @@ section.box div p{
         height: 100%;     
     }
 
-    .user__box header{
+    .userbox__header{
         background-color: var(--blue);
         display: flex;        
         flex-direction: column;
@@ -253,7 +248,7 @@ section.box div p{
         border-radius: 1rem;
     }
     
-    .user__box header img{
+    .userbox__image{
         width: 4rem;
         height: 4rem;
         border: 2px solid var(--white);
@@ -261,7 +256,15 @@ section.box div p{
         align-self: flex-start;
     }
 
-    .user__box ul{
+    .userbox__info__text {
+        font-size: 0.8rem;
+    }
+
+    .userbox__info__name {
+        font-size: 1.3rem;
+    }
+
+    .userbox__list{
         margin: 0rem;
         padding: 1.5rem 2rem;
         list-style-type: none;
@@ -270,139 +273,137 @@ section.box div p{
         justify-content: space-between;
     }
 
-    .user__box ul li {
+    .userbox__list__item {
         font-size: 0.9rem;
         line-height: 1.8rem;
     }
 
-    .box__content{        
+    .activity{
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .activity__container{        
         width: 100%;
         height: calc(100% - 2.7rem);
         margin-top: 2.7rem;
     }
 
-    .box__content header h2 {
+    .activity__container__header__title {
         font-size: 0.9rem;
         font-weight: 500;
         margin: 0rem;
     }
 
-    #work{
+    .activity__work{
         grid-area: work;
     }
 
-    #play{
+    .activity__play{
         grid-area: play;
     }
 
-    #study{
+    .activity__study{
         grid-area: study;
     }
 
-    #exercise{
+    .activity__exercise{
         grid-area: exercise;
     }
 
-    #social{
+    .activity__social{
         grid-area: social;
     }
 
-    #self__care{
+    .activity__self-care{
         grid-area: self-care;
     }
-
-    section.box div p{
+    
+    .activity__container__hrs{
         display: flex;
         flex-direction: column;
         justify-content: unset;
         align-items: flex-start;
+        gap: 0.3rem;
     }
 
-    .user__box header div span {
+    .activity__container__hrs__previous {
         font-size: 0.8rem;
     }
 
-    .user__box header div h1 {
-        font-size: 1.3rem;
-    }
-
-    .dots span {
+    .activity__container__header__dots span {
         width: 0.25rem; 
         height: 0.25rem; 
     }
 
-
-    section.box div p {
-        gap: 0.3rem;
-    }
-
-    .box__content p span {
-        font-size: 0.8rem;
-    }
 }
 
+/* 997 px */
 @media screen and (min-width: 62.31rem) {
 
     main{
         grid-template-columns: repeat(4, 13.12rem);
     }
 
-    .user__box header div{
+    .userbox__info{
         padding:  1.5rem 0rem 4rem 0rem;
     }
 
-    .user__box header div h1 {
+    .userbox__info__name {
         font-size: 2rem;
     }
 
-    .dots span {
+    .userbox___list li {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .activity__container__header__dots span {
         width: 0.3rem; 
         height: 0.3rem; 
     }
 
-    .box__content header h2 {
+    .activity__container__header__title {
         font-size: 1rem;
     }
 
-    .box__content p strong {
+    .activity__container__hrs__current {
         font-size: 3.5rem;
     }
 
-    .box__content p span {
+    .activity__container__hrs__previous {
         font-size: 0.9rem;
     }
 
-    .user__box ul li {
-        font-size: 1rem;
-        line-height: 1.8rem;
-    }
 }
 
-
+/* 1200px */
 @media screen and (min-width: 75rem) {
     
     main{
         grid-template-columns: repeat(4, 15.6rem);
     }
 
-    .user__box header div h1 {
+    .userbox__info__name {
         font-size: 3rem;
     }
 }
 
+/* 1400px */
 @media screen and (min-width: 87.5rem) {
 
     main{
         grid-template-columns: repeat(4, 17.5rem);
     }
     
-    .box__content p strong {
-        font-size: 4.5rem;
-    }
-
-    .user__box ul li {
+    .userbox__list__item {
         font-size: 1rem;
         line-height: 2.2rem;
+    }
+
+    .activity__container__hrs__current {
+        font-size: 4.5rem;
     }
 
 }

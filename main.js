@@ -1,43 +1,44 @@
 let filter_buttons = document.querySelectorAll('.change_filter');
 
 const fetchData = (filter, label) => {
-    console.log(label)
+    
     fetch('./data.json').then((response) => {
-        if(!response.ok){
-            console.log('Something went wrong!')
-        }
         return response.json();
     }).then((data) => {
         for (let elem of data){
-            let key = elem.title.toLowerCase().replace(' ', '__');
+            const key = elem.title.toLowerCase().replace(' ', '-');
             populate(key,label, elem.timeframes[filter].current, elem.timeframes[filter].previous)
         }
-    })
+    }).catch((error) => {
+        console.log('Something went wrong!', error)
+    });
 }
 
+// Add current and previous hours text
 const populate = ( id, label, current, previous) => {
-    document.querySelector(`#${id} .current`).innerHTML = `${current}hrs`;
-    document.querySelector(`#${id} .previous`).innerHTML = `Last ${label} - ${previous}hrs`;        
+    document.querySelector(`.activity__${id} .activity__container__hrs__current`).innerText = `${current}hrs`;
+    document.querySelector(`.activity__${id} .activity__container__hrs__previous`).innerText = `Last ${label} - ${previous}hrs`;        
 }
 
+// Load data by filter
 const load = (filter, label) => {
     fetchData(filter, label);
 }
 
 const resetButtonsState = () => {
     filter_buttons.forEach(button => {
-        button.classList.remove('active')
+        button.classList.remove('userbox__list--active')
     });
 }
 
 filter_buttons.forEach(button => {
-    button.addEventListener('click', function (event) {
-        let filter = event.target.dataset.value;
-        let label = event.target.dataset.label;
-        console.log(label)
+    button.addEventListener('click', function (event) {    
+        const {target} = event
+        const { dataset: {value, label} } = target;
+        
         resetButtonsState();
-        event.target.classList.add('active')
-        load(filter, label);
+        event.target.classList.add('userbox__list--active')
+        load(value, label);
     });
 });
 
