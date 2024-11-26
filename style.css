@@ -344,7 +344,7 @@ section.box div p{
 @media screen and (min-width: 62.31rem) {
 
     main{
-        grid-template-columns: repeat(4, 210px);
+        grid-template-columns: repeat(4, 13.12rem);
     }
 
     .user__box header div{
@@ -382,7 +382,7 @@ section.box div p{
 @media screen and (min-width: 75rem) {
     
     main{
-        grid-template-columns: repeat(4, 250px);
+        grid-template-columns: repeat(4, 15.6rem);
     }
 
     .user__box header div h1 {
@@ -393,7 +393,7 @@ section.box div p{
 @media screen and (min-width: 87.5rem) {
 
     main{
-        grid-template-columns: repeat(4, 280px);
+        grid-template-columns: repeat(4, 17.5rem);
     }
     
     .box__content p strong {
