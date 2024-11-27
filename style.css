@@ -155,7 +155,7 @@ main{
     flex-direction: column;
     gap: 0.5rem;
     justify-content: center;
-    transition: opacity 2s;
+    transition: background-color 2s;
 }
 
 .activity__container:hover{
