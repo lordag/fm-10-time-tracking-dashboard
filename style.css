@@ -287,7 +287,7 @@ main{
     .activity__container{        
         width: 100%;
         height: calc(100% - 2.7rem);
-        margin-top: 2.7rem;
+        margin-top: 3rem;
     }
 
     .activity__container__header__title {
